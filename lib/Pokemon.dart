@@ -47,6 +47,19 @@ class PokemonState extends State<Pokemon> {
 
   @override
   Widget build(BuildContext context) {
+    if(details == null) {
+      return new Scaffold(
+        appBar: new AppBar(
+          title: new Text(
+            "Loading...",
+            style: TextStyle(
+              color: Color(0xfff3d3d3d),
+            )
+          ),
+          backgroundColor: Colors.yellow[500],
+        ),
+      );
+    } else { 
     return Scaffold(
       backgroundColor: widget.cardColor,
       // appBar: AppBar(
@@ -165,6 +178,6 @@ class PokemonState extends State<Pokemon> {
         ),
       )
     );
-    //}
+    }
   }
 }
